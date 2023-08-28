@@ -13,9 +13,6 @@ type Item struct {
 }
 
 func calcutePrice(item Item) float64 {
-	if item.DiscountPrice == 0 {
-		return item.Price
-	}
 	return item.Price - item.DiscountPrice
 }
 
