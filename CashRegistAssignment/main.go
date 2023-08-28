@@ -13,10 +13,16 @@ type Item struct {
 }
 
 func calcutePrice(item Item) float64 {
+	if item.DiscountPrice == 0 {
+		return item.Price
+	}
 	return item.Price - item.DiscountPrice
 }
 
 func totalPrice(items []Item) float64 {
+	if len(items) == 0 {
+		return 0
+	}
 	var total float64 = 0
 	for _, item := range items {
 		total += calcutePrice(item)
